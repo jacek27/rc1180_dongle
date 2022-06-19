@@ -18365,9 +18365,12 @@ Source: www.johnsoncomponents.com .. J502-ND.pdf</description>
 <part name="FRAME1" library="frames" library_urn="urn:adsk.eagle:library:229" deviceset="A4L-LOC" device=""/>
 <part name="X1" library="con-coax" library_urn="urn:adsk.eagle:library:133" deviceset="SMA-" device="142-0701-801/806" package3d_urn="urn:adsk.eagle:package:6214/1"/>
 <part name="GND13" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
-<part name="H1" library="holes" library_urn="urn:adsk.eagle:library:237" deviceset="MOUNT-HOLE" device="2.8" package3d_urn="urn:adsk.eagle:package:14271/1"/>
-<part name="H2" library="holes" library_urn="urn:adsk.eagle:library:237" deviceset="MOUNT-HOLE" device="2.8" package3d_urn="urn:adsk.eagle:package:14271/1"/>
-<part name="H3" library="holes" library_urn="urn:adsk.eagle:library:237" deviceset="MOUNT-HOLE" device="2.8" package3d_urn="urn:adsk.eagle:package:14271/1"/>
+<part name="H1" library="holes" library_urn="urn:adsk.eagle:library:237" deviceset="MOUNT-HOLE" device="3.0" package3d_urn="urn:adsk.eagle:package:14277/1" value="MOUNT-HOLE3.0"/>
+<part name="H2" library="holes" library_urn="urn:adsk.eagle:library:237" deviceset="MOUNT-HOLE" device="3.0" package3d_urn="urn:adsk.eagle:package:14277/1" value="MOUNT-HOLE3.0"/>
+<part name="H3" library="holes" library_urn="urn:adsk.eagle:library:237" deviceset="MOUNT-HOLE" device="3.0" package3d_urn="urn:adsk.eagle:package:14277/1" value="MOUNT-HOLE3.0"/>
+<part name="R4" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="TBD"/>
+<part name="C2" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0805" package3d_urn="urn:adsk.eagle:package:23617/2" value="TBD"/>
+<part name="GND6" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -18500,12 +18503,12 @@ REGULATOR</text>
 <attribute name="LAST_DATE_TIME" x="217.17" y="10.16" size="2.286" layer="94"/>
 <attribute name="SHEET" x="230.505" y="5.08" size="2.54" layer="94"/>
 </instance>
-<instance part="X1" gate="G1" x="215.9" y="139.7" smashed="yes" rot="R180">
-<attribute name="VALUE" x="218.44" y="144.78" size="1.778" layer="96" rot="R180"/>
-<attribute name="NAME" x="218.44" y="136.398" size="1.778" layer="95" rot="R180"/>
+<instance part="X1" gate="G1" x="236.22" y="157.48" smashed="yes" rot="R180">
+<attribute name="VALUE" x="238.76" y="162.56" size="1.778" layer="96" rot="R180"/>
+<attribute name="NAME" x="238.76" y="154.178" size="1.778" layer="95" rot="R180"/>
 </instance>
-<instance part="GND13" gate="1" x="187.96" y="129.54" smashed="yes">
-<attribute name="VALUE" x="185.42" y="127" size="1.778" layer="96"/>
+<instance part="GND13" gate="1" x="193.04" y="142.24" smashed="yes">
+<attribute name="VALUE" x="190.5" y="139.7" size="1.778" layer="96"/>
 </instance>
 <instance part="H1" gate="G$1" x="218.44" y="127" smashed="yes">
 <attribute name="NAME" x="220.472" y="127.5842" size="1.778" layer="95"/>
@@ -18518,6 +18521,17 @@ REGULATOR</text>
 <instance part="H3" gate="G$1" x="218.44" y="111.76" smashed="yes">
 <attribute name="NAME" x="220.472" y="112.3442" size="1.778" layer="95"/>
 <attribute name="VALUE" x="220.472" y="109.2962" size="1.778" layer="96"/>
+</instance>
+<instance part="R4" gate="G$1" x="218.44" y="157.48" smashed="yes">
+<attribute name="NAME" x="217.17" y="155.9814" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="224.282" y="155.956" size="1.778" layer="96" rot="R180"/>
+</instance>
+<instance part="C2" gate="G$1" x="228.6" y="152.4" smashed="yes">
+<attribute name="NAME" x="230.124" y="152.781" size="1.778" layer="95"/>
+<attribute name="VALUE" x="230.124" y="147.701" size="1.778" layer="96"/>
+</instance>
+<instance part="GND6" gate="1" x="228.6" y="142.24" smashed="yes">
+<attribute name="VALUE" x="226.06" y="139.7" size="1.778" layer="96"/>
 </instance>
 </instances>
 <busses>
@@ -18601,10 +18615,15 @@ REGULATOR</text>
 <wire x1="78.74" y1="20.32" x2="78.74" y2="15.24" width="0.1524" layer="91"/>
 </segment>
 <segment>
+<pinref part="GND6" gate="1" pin="GND"/>
+<pinref part="C2" gate="G$1" pin="2"/>
+<wire x1="228.6" y1="144.78" x2="228.6" y2="147.32" width="0.1524" layer="91"/>
+</segment>
+<segment>
 <pinref part="X1" gate="G1" pin="2"/>
-<wire x1="213.36" y1="142.24" x2="187.96" y2="142.24" width="0.1524" layer="91"/>
 <pinref part="GND13" gate="1" pin="GND"/>
-<wire x1="187.96" y1="142.24" x2="187.96" y2="132.08" width="0.1524" layer="91"/>
+<wire x1="233.68" y1="160.02" x2="193.04" y2="160.02" width="0.1524" layer="91"/>
+<wire x1="193.04" y1="160.02" x2="193.04" y2="144.78" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="+3V3" class="0">
@@ -18714,9 +18733,9 @@ REGULATOR</text>
 <label x="124.46" y="111.76" size="1.27" layer="95" xref="yes"/>
 </segment>
 <segment>
-<pinref part="X1" gate="G1" pin="1"/>
-<wire x1="213.36" y1="139.7" x2="203.2" y2="139.7" width="0.1524" layer="91"/>
-<label x="203.2" y="139.7" size="1.27" layer="95" rot="R180" xref="yes"/>
+<pinref part="R4" gate="G$1" pin="1"/>
+<wire x1="213.36" y1="157.48" x2="210.82" y2="157.48" width="0.1524" layer="91"/>
+<label x="210.82" y="157.48" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 <net name="RC_RESET" class="0">
@@ -18770,6 +18789,17 @@ REGULATOR</text>
 <wire x1="111.76" y1="38.1" x2="104.14" y2="38.1" width="0.1524" layer="91"/>
 <wire x1="104.14" y1="38.1" x2="104.14" y2="45.72" width="0.1524" layer="91"/>
 <junction x="111.76" y="38.1"/>
+</segment>
+</net>
+<net name="N$3" class="0">
+<segment>
+<pinref part="R4" gate="G$1" pin="2"/>
+<pinref part="X1" gate="G1" pin="1"/>
+<wire x1="223.52" y1="157.48" x2="228.6" y2="157.48" width="0.1524" layer="91"/>
+<pinref part="C2" gate="G$1" pin="1"/>
+<wire x1="228.6" y1="157.48" x2="233.68" y2="157.48" width="0.1524" layer="91"/>
+<wire x1="228.6" y1="154.94" x2="228.6" y2="157.48" width="0.1524" layer="91"/>
+<junction x="228.6" y="157.48"/>
 </segment>
 </net>
 </nets>
