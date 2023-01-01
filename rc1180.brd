@@ -78,7 +78,7 @@
 <wire x1="30.127" y1="54" x2="0.127" y2="54" width="0" layer="20"/>
 <wire x1="0.127" y1="54" x2="0" y2="0" width="0" layer="20"/>
 <text x="10.16" y="40.64" size="0.6096" layer="26" rot="MR180">RC1180
-REV 1.0
+REV 1.1
 https://github.com/jacek27/rc1180_dongle</text>
 </plain>
 <libraries>
